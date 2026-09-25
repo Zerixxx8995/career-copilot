@@ -20,12 +20,15 @@ logger = logging.getLogger(__name__)
 async def embed_text(text: str) -> List[float]:
     """Return a single embedding vector for `text` (document mode)."""
     client = get_client()
-    result = await client.aio.models.embed_content(
-        model=settings.EMBEDDING_MODEL,
-        contents=[types.Content(role="user", parts=[types.Part(text=text)])],
-    )
-    # result.embeddings is a list of ContentEmbedding objects
-    return list(result.embeddings[0].values)
+    try:
+        result = await client.aio.models.embed_content(
+            model=settings.EMBEDDING_MODEL,
+            contents=[types.Content(role="user", parts=[types.Part(text=text)])],
+        )
+        return list(result.embeddings[0].values)
+    except Exception as exc:
+        logger.warning("Embedding failed for text using %s (%s). Returning zero vector fallback.", settings.EMBEDDING_MODEL, exc)
+        return [0.0] * settings.EMBEDDING_DIMENSION
 
 
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))

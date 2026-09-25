@@ -13,11 +13,9 @@ from pathlib import Path
 # Add backend/ to path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
 from sqlalchemy import select
 
-from app.core.config import settings
-from app.core.database import Base
+from app.core.database import AsyncSessionLocal, Base, engine
 from app.models.job_models import JobPosting
 
 
@@ -26,17 +24,10 @@ async def seed():
     with open(data_path) as f:
         postings = json.load(f)
 
-    db_url = settings.DATABASE_URL
-    if db_url.startswith("postgresql://"):
-        db_url = db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
-
-    engine = create_async_engine(db_url, echo=False)
-    SessionLocal = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
-
     async with engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)
 
-    async with SessionLocal() as session:
+    async with AsyncSessionLocal() as session:
         existing = (await session.execute(select(JobPosting))).scalars().all()
         if existing:
             print(f"Database already has {len(existing)} job postings. Skipping seed.")

@@ -64,14 +64,14 @@ def extract_pdf_text(file_bytes: bytes) -> str:
 
 
 async def structure_resume(raw_text: str) -> Dict[str, Any]:
-    """Use LLM to parse raw resume text into structured fields."""
+    """Use LLM to parse raw resume text into structured fields with fallback."""
     prompt = _STRUCTURE_PROMPT.format(text=raw_text[:6000])
-    raw = await generate_text(prompt)
-    raw = re.sub(r"```(?:json)?", "", raw).strip().rstrip("```").strip()
     try:
+        raw = await generate_text(prompt)
+        raw = re.sub(r"```(?:json)?", "", raw).strip().rstrip("```").strip()
         return json.loads(raw)
-    except json.JSONDecodeError as exc:
-        logger.error("Failed to parse structured resume JSON: %s\nRaw: %s", exc, raw[:500])
+    except Exception as exc:
+        logger.warning("LLM structuring skipped or failed (%s). Falling back to rule-based extraction.", exc)
         return {}
 
 
@@ -132,22 +132,25 @@ async def _chunk_and_index_resume(
             chunks.append({"section": "raw", "content": raw_text[i : i + window_size]})
 
     # Embed and upsert
-    texts = [c["content"] for c in chunks]
-    embeddings = await embedding_client.embed_texts(texts)
+    try:
+        texts = [c["content"] for c in chunks]
+        embeddings = await embedding_client.embed_texts(texts)
 
-    payloads = [
-        {"user_id": user_id, "section": c["section"], "content": c["content"]}
-        for c in chunks
-    ]
-    ids = [str(uuid.uuid4()) for _ in chunks]
+        payloads = [
+            {"user_id": user_id, "section": c["section"], "content": c["content"]}
+            for c in chunks
+        ]
+        ids = [str(uuid.uuid4()) for _ in chunks]
 
-    await qclient.upsert_vectors(
-        collection_name=settings.QDRANT_RESUME_COLLECTION,
-        vectors=embeddings,
-        payloads=payloads,
-        ids=ids,
-    )
-    logger.info("Indexed %d resume chunks for user %s", len(chunks), user_id)
+        await qclient.upsert_vectors(
+            collection_name=settings.QDRANT_RESUME_COLLECTION,
+            vectors=embeddings,
+            payloads=payloads,
+            ids=ids,
+        )
+        logger.info("Indexed %d resume chunks for user %s", len(chunks), user_id)
+    except Exception as exc:
+        logger.warning("Resume vector indexing failed/skipped: %s", exc)
 
 
 async def ingest_resume(
@@ -193,7 +196,10 @@ async def ingest_resume(
 
     await db.flush()
 
-    # RAG index
-    await _chunk_and_index_resume(user_id, raw_text, structured)
+    # RAG index (optional step)
+    try:
+        await _chunk_and_index_resume(user_id, raw_text, structured)
+    except Exception as exc:
+        logger.warning("RAG indexing failed: %s", exc)
 
     return profile

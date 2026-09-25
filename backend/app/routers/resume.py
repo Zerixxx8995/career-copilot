@@ -12,6 +12,7 @@ router = APIRouter()
 
 
 @router.post("", summary="Upload and parse resume PDF")
+@router.post("/", summary="Upload and parse resume PDF", include_in_schema=False)
 async def upload_resume(
     file: UploadFile = File(...),
     db: AsyncSession = Depends(get_db),

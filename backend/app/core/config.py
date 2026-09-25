@@ -37,11 +37,11 @@ class Settings(BaseSettings):
 
     # LLM
     GEMINI_API_KEY: str
-    LLM_MODEL: str = "gemini-2.0-flash"
+    LLM_MODEL: str = "gemini-3.6-flash"
 
     # Embeddings
-    EMBEDDING_MODEL: str = "models/text-embedding-004"
-    EMBEDDING_DIMENSION: int = 768
+    EMBEDDING_MODEL: str = "gemini-embedding-001"
+    EMBEDDING_DIMENSION: int = 3072
 
     # Qdrant
     QDRANT_URL: str

@@ -83,11 +83,14 @@ async def search_vectors(
 async def delete_by_payload(collection_name: str, field: str, value: str) -> None:
     """Delete all points where payload[field] == value."""
     client = get_qdrant_client()
-    await client.delete(
-        collection_name=collection_name,
-        points_selector=qmodels.FilterSelector(
-            filter=qmodels.Filter(
-                must=[qmodels.FieldCondition(key=field, match=qmodels.MatchValue(value=value))]
-            )
-        ),
-    )
+    try:
+        await client.delete(
+            collection_name=collection_name,
+            points_selector=qmodels.FilterSelector(
+                filter=qmodels.Filter(
+                    must=[qmodels.FieldCondition(key=field, match=qmodels.MatchValue(value=value))]
+                )
+            ),
+        )
+    except Exception as exc:
+        logger.warning("Qdrant delete_by_payload skipped/failed for %s=%s: %s", field, value, exc)

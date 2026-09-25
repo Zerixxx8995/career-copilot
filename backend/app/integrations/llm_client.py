@@ -26,6 +26,35 @@ def get_client() -> genai.Client:
     return _client
 
 
+CANDIDATE_MODELS = [
+    settings.LLM_MODEL,
+    "gemini-3.6-flash",
+    "gemini-3.5-flash-lite",
+    "gemini-3.7-flash",
+    "gemini-flash-lite-latest",
+]
+
+
+async def _generate_content_with_fallback(
+    client: genai.Client,
+    contents: list,
+    config: Optional[types.GenerateContentConfig] = None,
+) -> Any:
+    seen = set()
+    models = [m for m in CANDIDATE_MODELS if not (m in seen or seen.add(m))]
+    last_exc = None
+    for m in models:
+        try:
+            kwargs: Dict[str, Any] = {"model": m, "contents": contents}
+            if config:
+                kwargs["config"] = config
+            return await client.aio.models.generate_content(**kwargs)
+        except Exception as exc:
+            last_exc = exc
+            logger.warning("Gemini model '%s' failed (%s), trying fallback model...", m, exc)
+    raise last_exc
+
+
 @retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=2, max=10))
 async def generate_text(prompt: str, system_prompt: Optional[str] = None) -> str:
     """Generate plain text from a prompt (no tool-calling)."""
@@ -36,10 +65,7 @@ async def generate_text(prompt: str, system_prompt: Optional[str] = None) -> str
     else:
         contents.append(types.Content(role="user", parts=[types.Part(text=prompt)]))
 
-    response = await client.aio.models.generate_content(
-        model=settings.LLM_MODEL,
-        contents=contents,
-    )
+    response = await _generate_content_with_fallback(client, contents)
     return response.text or ""
 
 
@@ -77,13 +103,6 @@ async def generate_with_tools(
                     converted_parts.append(p)
             contents.append(types.Content(role=role, parts=converted_parts))
 
-    kwargs: Dict[str, Any] = {
-        "model": settings.LLM_MODEL,
-        "contents": contents,
-    }
-    if config:
-        kwargs["config"] = config
-
-    response = await client.aio.models.generate_content(**kwargs)
+    response = await _generate_content_with_fallback(client, contents, config)
     logger.debug("LLM tool response candidates: %d", len(response.candidates or []))
     return response

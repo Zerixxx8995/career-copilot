@@ -76,7 +76,14 @@ async def _dispatch_tool(
     if fn is None:
         return {"error": f"Unknown tool: {tool_name}"}
     try:
-        return await fn(db=db, user_id=user_id, **tool_args)
+        import inspect
+        sig = inspect.signature(fn)
+        kwargs = dict(tool_args)
+        if "db" in sig.parameters:
+            kwargs["db"] = db
+        if "user_id" in sig.parameters:
+            kwargs["user_id"] = user_id
+        return await fn(**kwargs)
     except Exception as exc:
         logger.exception("Tool '%s' raised exception", tool_name)
         return {"error": str(exc)}
@@ -113,11 +120,7 @@ async def run_agent(
     for iteration in range(MAX_ITERATIONS):
         t0 = time.monotonic()
         try:
-            response = await client.aio.models.generate_content(
-                model=settings.LLM_MODEL,
-                contents=contents,
-                config=config,
-            )
+            response = await _call_llm_with_fallback(client, contents, config)
         except Exception as exc:
             logger.exception("LLM call failed on iteration %d", iteration)
             final_answer = f"I encountered an error: {exc}"
@@ -202,6 +205,32 @@ async def run_agent(
     }
 
 
+async def _call_llm_with_fallback(client: Any, contents: list, config: Any) -> Any:
+    """Try configured model first, falling back to alternative models on 503/404 errors."""
+    candidate_models = [
+        settings.LLM_MODEL,
+        "gemini-3.6-flash",
+        "gemini-3.5-flash-lite",
+        "gemini-3.7-flash",
+        "gemini-flash-lite-latest",
+    ]
+    seen = set()
+    models = [m for m in candidate_models if not (m in seen or seen.add(m))]
+
+    last_exc = None
+    for m in models:
+        try:
+            return await client.aio.models.generate_content(
+                model=m,
+                contents=contents,
+                config=config,
+            )
+        except Exception as exc:
+            last_exc = exc
+            logger.warning("LLM model '%s' failed (%s), trying next fallback...", m, exc)
+    raise last_exc  # type: ignore[misc]
+
+
 async def _request_final_answer(client: Any, contents: list, config: Any) -> str:
     """After hitting max iterations, request a concise summary."""
     contents.append(
@@ -211,11 +240,7 @@ async def _request_final_answer(client: Any, contents: list, config: Any) -> str
         )
     )
     try:
-        resp = await client.aio.models.generate_content(
-            model=settings.LLM_MODEL,
-            contents=contents,
-            config=config,
-        )
+        resp = await _call_llm_with_fallback(client, contents, config)
         parts = resp.candidates[0].content.parts if resp.candidates else []
         return " ".join(p.text for p in parts if p.text).strip()
     except Exception:
