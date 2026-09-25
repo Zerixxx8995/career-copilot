@@ -23,6 +23,7 @@ async def handle_agent_query(
         "trace_id": result["trace_id"],
         "answer": result["final_answer"],
         "steps_count": len(result["steps"]),
+        "steps": result["steps"],
     }
 
 

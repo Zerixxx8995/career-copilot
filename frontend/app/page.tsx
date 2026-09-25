@@ -22,8 +22,7 @@ import ErrorBoundary from "@/components/shared/ErrorBoundary";
 
 import { submitQuery } from "@/services/agentService";
 import { getProfile, uploadResume } from "@/services/profileService";
-import { http } from "@/services/httpClient";
-import { clearToken, getUserId } from "@/services/httpClient";
+import { http, clearToken, getUserId } from "@/services/httpClient";
 
 import type {
   AgentQueryResponse,
@@ -83,14 +82,15 @@ export default function HomePage() {
 
     try {
       const res: AgentQueryResponse = await submitQuery(query);
+      const steps = res.steps || [];
 
-      // Parse any job mentions from the answer (agent returns job IDs in trace steps)
-      const jobIds = extractJobIdsFromSteps(res as unknown as { steps: AgentTraceStep[] });
+      // Parse job IDs from trace steps
+      const jobIds = extractJobIdsFromSteps(steps);
 
       setQueryResult({
         answer: res.answer,
         traceId: res.trace_id,
-        steps: (res as unknown as { steps: AgentTraceStep[] }).steps || [],
+        steps,
         jobs: jobIds.map((id) => ({ job_id: id } as JobSummary)),
       });
 
@@ -143,9 +143,9 @@ export default function HomePage() {
   };
 
   // Extract job IDs from agent trace steps
-  const extractJobIdsFromSteps = (res: { steps?: AgentTraceStep[] }): string[] => {
+  const extractJobIdsFromSteps = (steps: AgentTraceStep[]): string[] => {
     const ids = new Set<string>();
-    for (const step of res.steps || []) {
+    for (const step of steps) {
       if (step.output && typeof step.output === "object") {
         const out = step.output as Record<string, unknown>;
         // search_jobs output

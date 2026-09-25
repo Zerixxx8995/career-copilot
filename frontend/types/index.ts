@@ -64,6 +64,7 @@ export interface AgentQueryResponse {
   trace_id: string;
   answer: string;
   steps_count: number;
+  steps?: AgentTraceStep[];
 }
 
 export interface AgentTrace {
