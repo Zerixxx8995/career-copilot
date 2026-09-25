@@ -4,14 +4,20 @@ Application configuration — reads from environment variables via pydantic-sett
 from __future__ import annotations
 
 from functools import lru_cache
+from pathlib import Path
 from typing import List
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+# Resolve .env from backend/ or project root (one level up)
+_HERE = Path(__file__).resolve().parent.parent.parent  # backend/
+_ROOT_ENV = _HERE.parent / ".env"  # project root
+_ENV_FILE = str(_ROOT_ENV) if _ROOT_ENV.exists() else ".env"
+
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=_ENV_FILE,
         env_file_encoding="utf-8",
         case_sensitive=False,
     )

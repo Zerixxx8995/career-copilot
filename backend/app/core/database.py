@@ -18,8 +18,19 @@ _db_url = settings.DATABASE_URL
 if _db_url.startswith("postgresql://"):
     _db_url = _db_url.replace("postgresql://", "postgresql+asyncpg://", 1)
 
+# asyncpg doesn't understand sslmode/channel_binding query params — strip them
+# and pass ssl=True via connect_args instead
+import re as _re
+_has_ssl = bool(_re.search(r"sslmode=require", _db_url, _re.IGNORECASE))
+_db_url = _re.sub(r"[?&]sslmode=[^&]*", "", _db_url)
+_db_url = _re.sub(r"[?&]channel_binding=[^&]*", "", _db_url)
+_db_url = _db_url.rstrip("?&")
+
+_connect_args = {"ssl": "require"} if _has_ssl else {}
+
 engine = create_async_engine(
     _db_url,
+    connect_args=_connect_args,
     pool_size=5,
     max_overflow=10,
     pool_pre_ping=True,
