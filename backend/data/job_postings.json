@@ -1,0 +1,402 @@
+[
+  {
+    "title": "Machine Learning Engineer",
+    "company": "Fractal Analytics",
+    "location": "Mumbai, India",
+    "role_category": "ml",
+    "full_description": "We are looking for a Machine Learning Engineer to design, build, and deploy ML models at scale. You will work closely with data scientists and engineers to bring ML solutions into production. Responsibilities include feature engineering, model training and evaluation, MLOps pipeline design, and monitoring models in production. You will collaborate with cross-functional teams to translate business problems into ML solutions.",
+    "requirements": ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "MLflow", "Docker", "Kubernetes", "SQL", "Feature Engineering", "Model Deployment"]
+  },
+  {
+    "title": "Senior ML Engineer – NLP",
+    "company": "Sarvam AI",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Sarvam AI is building foundational AI models for Indian languages. We seek a Senior ML Engineer with deep NLP expertise to work on large language models, fine-tuning, and evaluation pipelines. You will design pre-training and fine-tuning workflows, build evaluation benchmarks, and contribute to our open-source models. Experience with distributed training is critical.",
+    "requirements": ["Python", "PyTorch", "Transformers", "Hugging Face", "CUDA", "Distributed Training", "NLP", "LLM Fine-tuning", "Linux", "Git"]
+  },
+  {
+    "title": "Data Scientist – Growth",
+    "company": "Swiggy",
+    "location": "Bengaluru, India",
+    "role_category": "data_science",
+    "full_description": "Join Swiggy's Growth Data Science team to drive experiments and build models that optimise customer acquisition and retention. You will design A/B tests, build predictive models for churn and LTV, and partner with product managers to instrument and measure growth interventions. SQL and Python fluency are essential.",
+    "requirements": ["Python", "SQL", "A/B Testing", "Statistics", "Machine Learning", "Pandas", "Scikit-learn", "Data Visualization", "Jupyter", "Git"]
+  },
+  {
+    "title": "Applied Scientist – Recommendations",
+    "company": "Flipkart",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Flipkart's Recommendations team is looking for an Applied Scientist to improve product recommendations for 400M+ users. You will develop collaborative filtering, content-based, and hybrid models, run offline and online experiments, and scale solutions using Spark and distributed systems.",
+    "requirements": ["Python", "Machine Learning", "Recommender Systems", "Spark", "SQL", "A/B Testing", "Deep Learning", "PyTorch", "Scala (preferred)", "AWS"]
+  },
+  {
+    "title": "AI/ML Engineer – Computer Vision",
+    "company": "Mad Street Den (Vue.ai)",
+    "location": "Chennai, India",
+    "role_category": "ml",
+    "full_description": "Build computer vision models for fashion and retail AI. Responsibilities include developing image classification, object detection, and segmentation models, deploying them as REST APIs, and maintaining model performance in production.",
+    "requirements": ["Python", "PyTorch", "Computer Vision", "OpenCV", "Object Detection", "Image Segmentation", "REST APIs", "Docker", "Git", "Linux"]
+  },
+  {
+    "title": "Software Engineer – Backend (Python)",
+    "company": "Zepto",
+    "location": "Mumbai, India",
+    "role_category": "backend",
+    "full_description": "Zepto is a fast-growing quick-commerce startup. We are hiring Backend Engineers to build and scale our order management, inventory, and logistics services. You will design microservices, own API design, work with high-throughput systems, and contribute to system design decisions.",
+    "requirements": ["Python", "FastAPI", "PostgreSQL", "Redis", "Kafka", "Microservices", "Docker", "REST APIs", "System Design", "Git"]
+  },
+  {
+    "title": "Backend Engineer – Platform",
+    "company": "Razorpay",
+    "location": "Bengaluru, India",
+    "role_category": "backend",
+    "full_description": "Build the core payment processing platform at Razorpay. You will work on high-availability services processing millions of transactions per day. Responsibilities include designing fault-tolerant systems, improving API reliability, and building internal platform tools.",
+    "requirements": ["Java", "Spring Boot", "MySQL", "Redis", "Kafka", "Microservices", "REST APIs", "Docker", "Kubernetes", "System Design"]
+  },
+  {
+    "title": "Full Stack Engineer",
+    "company": "CRED",
+    "location": "Bengaluru, India",
+    "role_category": "fullstack",
+    "full_description": "CRED is building the most trusted financial platform in India. We are looking for Full Stack Engineers who thrive in ambiguity, have strong product instincts, and can build end-to-end features. You will work on React frontends, Node.js or Python backends, and collaborate with design and product teams.",
+    "requirements": ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "REST APIs", "Docker", "Git", "System Design", "CSS"]
+  },
+  {
+    "title": "MLOps Engineer",
+    "company": "Juspay",
+    "location": "Bengaluru, India",
+    "role_category": "mlops",
+    "full_description": "Build and maintain ML infrastructure for Juspay's fraud detection and risk models. Responsibilities include setting up CI/CD for ML, managing model registries, building feature stores, and ensuring model monitoring and observability.",
+    "requirements": ["Python", "MLflow", "Kubeflow", "Docker", "Kubernetes", "CI/CD", "Feature Store", "PostgreSQL", "Monitoring", "Linux"]
+  },
+  {
+    "title": "Research Engineer – LLMs",
+    "company": "AI4Bharat",
+    "location": "Chennai, India (Hybrid)",
+    "role_category": "ml",
+    "full_description": "AI4Bharat is building open-source AI for Indian languages. As a Research Engineer you will implement and experiment with pre-training recipes for large language models, build evaluation pipelines, and contribute to open datasets. Strong fundamentals in deep learning are required.",
+    "requirements": ["Python", "PyTorch", "NLP", "Transformers", "Hugging Face", "LLM Training", "CUDA", "Linux", "Git", "Research Experience"]
+  },
+  {
+    "title": "Software Engineer – Data Infra",
+    "company": "PhonePe",
+    "location": "Bengaluru, India",
+    "role_category": "data_engineering",
+    "full_description": "PhonePe's Data Infrastructure team powers analytics and ML for 500M+ users. You will build and maintain real-time and batch data pipelines, manage our Spark and Flink clusters, and ensure data quality and freshness for downstream teams.",
+    "requirements": ["Python", "Spark", "Kafka", "Flink", "SQL", "Airflow", "Scala", "Docker", "Data Modeling", "Linux"]
+  },
+  {
+    "title": "Machine Learning Engineer – Search",
+    "company": "Meesho",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Improve product search ranking for Meesho's 150M+ users. You will build learning-to-rank models, query understanding systems, and embedding-based retrieval for the search platform.",
+    "requirements": ["Python", "Machine Learning", "Information Retrieval", "Elasticsearch", "Learning to Rank", "Embeddings", "SQL", "Spark", "PyTorch", "Git"]
+  },
+  {
+    "title": "Data Engineer",
+    "company": "Urban Company",
+    "location": "Gurugram, India",
+    "role_category": "data_engineering",
+    "full_description": "Design and maintain the data platform powering Urban Company's supply-demand analytics. Work includes building ETL pipelines, maintaining the data warehouse, and enabling self-service analytics for business teams.",
+    "requirements": ["Python", "SQL", "Airflow", "Redshift", "dbt", "Spark", "Data Modeling", "ETL", "Git", "PostgreSQL"]
+  },
+  {
+    "title": "ML Engineer – Fintech",
+    "company": "Jupiter Money",
+    "location": "Mumbai, India",
+    "role_category": "ml",
+    "full_description": "Build credit scoring, fraud detection, and personalisation models for Jupiter's neobanking platform. You will own the end-to-end ML lifecycle from data exploration to production deployment and monitoring.",
+    "requirements": ["Python", "Scikit-learn", "XGBoost", "SQL", "Feature Engineering", "Model Monitoring", "Docker", "FastAPI", "Git", "Statistics"]
+  },
+  {
+    "title": "NLP Engineer",
+    "company": "Vernacular.ai",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build conversational AI for Indic languages. You will fine-tune NLP models for intent classification, NER, and dialogue management, and deploy them in production voice bot systems.",
+    "requirements": ["Python", "NLP", "Transformers", "Hugging Face", "Intent Classification", "NER", "Docker", "REST APIs", "Git", "Linux"]
+  },
+  {
+    "title": "Software Engineer II – Backend",
+    "company": "Navi Technologies",
+    "location": "Bengaluru, India",
+    "role_category": "backend",
+    "full_description": "Build resilient backend services for Navi's lending and insurance products. You will design APIs, own service reliability, and work on high-concurrency systems processing thousands of transactions per second.",
+    "requirements": ["Go", "Microservices", "PostgreSQL", "Redis", "Kafka", "Docker", "Kubernetes", "REST APIs", "System Design", "Git"]
+  },
+  {
+    "title": "Data Scientist – Risk",
+    "company": "Slice",
+    "location": "Bengaluru, India",
+    "role_category": "data_science",
+    "full_description": "Build credit and fraud risk models for Slice's consumer credit card. You will develop underwriting models, monitor model performance, and improve decision systems that approve or decline credit in real time.",
+    "requirements": ["Python", "Machine Learning", "SQL", "Credit Scoring", "Statistics", "Scikit-learn", "XGBoost", "Feature Engineering", "Pandas", "Git"]
+  },
+  {
+    "title": "AI Engineer – GenAI Products",
+    "company": "Postman",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build Generative AI features inside Postman — including code generation, API documentation summarisation, and AI-assisted API testing. You will work with LLM APIs, build RAG pipelines, and ship AI products to millions of developers.",
+    "requirements": ["Python", "LLMs", "RAG", "Vector Databases", "Prompt Engineering", "FastAPI", "TypeScript", "Docker", "Git", "REST APIs"]
+  },
+  {
+    "title": "Machine Learning Platform Engineer",
+    "company": "Uber (India Engineering)",
+    "location": "Bengaluru, India",
+    "role_category": "mlops",
+    "full_description": "Build Uber's ML platform serving thousands of models globally. You will work on feature stores, model serving infrastructure, and experiment tracking systems used by hundreds of ML engineers across the organisation.",
+    "requirements": ["Python", "Java", "Kubernetes", "Spark", "Feature Store", "Model Serving", "gRPC", "Kafka", "Distributed Systems", "System Design"]
+  },
+  {
+    "title": "Software Engineer – Machine Learning",
+    "company": "Google (Hyderabad)",
+    "location": "Hyderabad, India",
+    "role_category": "ml",
+    "full_description": "Join Google's Hyderabad engineering office to build ML infrastructure and applied ML features at scale. Responsibilities span data pipelines, model training optimisation, and integration of ML into Google products. Strong software engineering fundamentals required alongside ML knowledge.",
+    "requirements": ["Python", "C++", "TensorFlow", "Distributed Systems", "Data Structures", "Algorithms", "SQL", "Linux", "Git", "System Design"]
+  },
+  {
+    "title": "Research Scientist – Deep Learning",
+    "company": "Samsung Research Institute",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Conduct applied research on deep learning for on-device AI, including model compression, quantisation, and efficient neural architecture design. You will publish results and transfer research to product teams.",
+    "requirements": ["Python", "PyTorch", "Deep Learning", "Model Compression", "Quantization", "CUDA", "Research", "C++", "Linear Algebra", "Git"]
+  },
+  {
+    "title": "Backend Engineer – Node.js",
+    "company": "Groww",
+    "location": "Bengaluru, India",
+    "role_category": "backend",
+    "full_description": "Build the trading and investment platform backend for Groww's 10M+ active investors. You will design high-throughput APIs, ensure sub-100ms order processing latency, and work on financial data systems.",
+    "requirements": ["Node.js", "TypeScript", "PostgreSQL", "Redis", "Kafka", "REST APIs", "Microservices", "Docker", "Git", "System Design"]
+  },
+  {
+    "title": "Data Scientist – Product Analytics",
+    "company": "Notion",
+    "location": "Remote (India)",
+    "role_category": "data_science",
+    "full_description": "Drive product decisions at Notion through rigorous analysis and experimentation. You will define metrics, run A/B tests, build dashboards, and partner with PMs and designers to shape the product roadmap.",
+    "requirements": ["Python", "SQL", "A/B Testing", "Statistics", "Data Visualization", "dbt", "Looker", "Pandas", "Git", "Communication"]
+  },
+  {
+    "title": "ML Engineer – Autonomous Vehicles",
+    "company": "Ather Energy",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build perception and prediction models for Ather's connected vehicle platform. You will work on time-series anomaly detection, route prediction, and battery health estimation using sensor data from a fleet of 1M+ scooters.",
+    "requirements": ["Python", "PyTorch", "Time Series Analysis", "Anomaly Detection", "Sensor Data", "SQL", "Docker", "Scikit-learn", "Linux", "Git"]
+  },
+  {
+    "title": "Software Engineer – AI Platform",
+    "company": "ShareChat",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build the AI platform powering content ranking, moderation, and personalisation for ShareChat's 180M users. Responsibilities include model serving infrastructure, A/B experiment frameworks, and real-time feature pipelines.",
+    "requirements": ["Python", "Go", "Kubernetes", "Kafka", "gRPC", "Model Serving", "Spark", "Docker", "System Design", "Git"]
+  },
+  {
+    "title": "Data Scientist – Supply Chain",
+    "company": "Reliance Retail",
+    "location": "Mumbai, India",
+    "role_category": "data_science",
+    "full_description": "Apply machine learning to optimise demand forecasting, inventory replenishment, and supply chain operations across Reliance Retail's nationwide network. You will work with large-scale retail data and partner with operations teams.",
+    "requirements": ["Python", "Machine Learning", "Demand Forecasting", "Time Series", "SQL", "Scikit-learn", "Pandas", "Statistics", "Excel", "Communication"]
+  },
+  {
+    "title": "ML Engineer – Generative AI",
+    "company": "InMobi",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build generative AI capabilities for InMobi's ad creative platform. You will develop text-to-image, image editing, and copy generation models, fine-tune foundation models on ad data, and integrate them into production serving systems.",
+    "requirements": ["Python", "PyTorch", "Diffusion Models", "Generative AI", "LLMs", "Fine-tuning", "Docker", "REST APIs", "CUDA", "Git"]
+  },
+  {
+    "title": "Backend Engineer – Go",
+    "company": "BharatPe",
+    "location": "Delhi, India",
+    "role_category": "backend",
+    "full_description": "Build high-performance financial APIs for BharatPe's merchant payments platform. You will design fault-tolerant microservices, implement payment workflows, and ensure system reliability at scale.",
+    "requirements": ["Go", "PostgreSQL", "Redis", "Kafka", "Microservices", "REST APIs", "Docker", "Kubernetes", "System Design", "Git"]
+  },
+  {
+    "title": "Machine Learning Engineer – Remote",
+    "company": "Turing",
+    "location": "Remote",
+    "role_category": "ml",
+    "full_description": "Work remotely with top US companies on ML projects through Turing's platform. Responsibilities vary by placement but typically include model development, MLOps, and integration of ML into software products.",
+    "requirements": ["Python", "Machine Learning", "TensorFlow or PyTorch", "SQL", "REST APIs", "Docker", "Git", "Communication", "Problem Solving", "English Proficiency"]
+  },
+  {
+    "title": "NLP Scientist – Conversational AI",
+    "company": "Haptik (Jio)",
+    "location": "Mumbai, India",
+    "role_category": "ml",
+    "full_description": "Design and improve conversational AI systems for enterprise deployments. You will work on intent detection, entity extraction, dialogue management, and LLM integration for customer support automation.",
+    "requirements": ["Python", "NLP", "Transformers", "Dialogue Systems", "LLMs", "Rasa", "Docker", "REST APIs", "SQL", "Git"]
+  },
+  {
+    "title": "Software Engineer – ML Infrastructure",
+    "company": "Ola Electric",
+    "location": "Bengaluru, India",
+    "role_category": "mlops",
+    "full_description": "Build infrastructure for training and serving ML models across Ola Electric's vehicle analytics, battery management, and autonomous driving research. Includes feature pipelines, model serving, and experiment tracking.",
+    "requirements": ["Python", "MLflow", "Docker", "Kubernetes", "Spark", "Airflow", "CI/CD", "PostgreSQL", "System Design", "Git"]
+  },
+  {
+    "title": "Data Scientist – Pricing",
+    "company": "MakeMyTrip",
+    "location": "Gurugram, India",
+    "role_category": "data_science",
+    "full_description": "Build pricing optimisation and demand forecasting models for MakeMyTrip's hotel and flight inventory. You will run pricing experiments, develop elasticity models, and implement dynamic pricing strategies.",
+    "requirements": ["Python", "Machine Learning", "Statistics", "SQL", "Pricing Models", "A/B Testing", "Pandas", "Scikit-learn", "Causal Inference", "Git"]
+  },
+  {
+    "title": "AI Research Engineer",
+    "company": "Wadhwani AI",
+    "location": "Mumbai, India",
+    "role_category": "ml",
+    "full_description": "Apply AI for social good — work on projects in health, agriculture, and education. Responsibilities include building ML models, deploying them in low-resource environments, and working with NGO and government partners.",
+    "requirements": ["Python", "PyTorch", "Machine Learning", "Computer Vision", "Docker", "REST APIs", "SQL", "Research", "Communication", "Git"]
+  },
+  {
+    "title": "Senior Software Engineer – Python/AI",
+    "company": "Sprinklr",
+    "location": "Gurugram, India",
+    "role_category": "backend",
+    "full_description": "Build AI-powered social listening and customer experience features at Sprinklr. You will work on ML pipeline integration, API design, and scaling services to process billions of social media signals.",
+    "requirements": ["Python", "FastAPI", "PostgreSQL", "Kafka", "Docker", "Kubernetes", "Machine Learning Integration", "REST APIs", "System Design", "Git"]
+  },
+  {
+    "title": "ML Engineer – Financial AI",
+    "company": "PayU",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build risk and fraud detection ML models for PayU's payments platform across 50+ markets. You will develop, evaluate, and monitor models processing millions of transactions, and work on real-time inference systems.",
+    "requirements": ["Python", "Machine Learning", "XGBoost", "SQL", "Real-time Inference", "Feature Engineering", "Docker", "REST APIs", "Statistics", "Git"]
+  },
+  {
+    "title": "Data Engineer – Analytics",
+    "company": "Dunzo",
+    "location": "Bengaluru, India",
+    "role_category": "data_engineering",
+    "full_description": "Build the data infrastructure powering Dunzo's operations analytics. You will design and maintain real-time and batch pipelines, manage data quality, and enable BI teams with clean, reliable data.",
+    "requirements": ["Python", "SQL", "Airflow", "Kafka", "BigQuery", "dbt", "Data Modeling", "Docker", "Git", "Communication"]
+  },
+  {
+    "title": "ML Engineer – Healthcare AI",
+    "company": "Niramai",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Develop AI models for breast cancer screening using thermal imaging. You will work on computer vision pipelines, model validation for medical use, and deploying diagnostic AI in clinical settings.",
+    "requirements": ["Python", "PyTorch", "Computer Vision", "Medical Imaging", "Model Validation", "Docker", "Linux", "CUDA", "Statistics", "Git"]
+  },
+  {
+    "title": "Software Engineer – Backend (Java)",
+    "company": "Paytm",
+    "location": "Noida, India",
+    "role_category": "backend",
+    "full_description": "Build and scale Paytm's payment and wallet services. You will own service design, implement high-throughput APIs, and work on reliability and performance of systems serving 300M+ users.",
+    "requirements": ["Java", "Spring Boot", "MySQL", "Redis", "Kafka", "Microservices", "Docker", "Kubernetes", "REST APIs", "System Design"]
+  },
+  {
+    "title": "Research Engineer – Multimodal AI",
+    "company": "Microsoft Research (India)",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Conduct research on multimodal AI at MSR India. Projects span vision-language models, audio-visual learning, and document understanding. You will collaborate with global researchers and publish at top venues.",
+    "requirements": ["Python", "PyTorch", "Deep Learning", "Multimodal Learning", "Research", "Computer Vision", "NLP", "CUDA", "Linear Algebra", "Git"]
+  },
+  {
+    "title": "ML Scientist – Personalisation",
+    "company": "Hotstar",
+    "location": "Mumbai, India",
+    "role_category": "ml",
+    "full_description": "Improve content personalisation and recommendations for Disney+ Hotstar's 50M+ subscribers. You will build collaborative filtering, session-based recommendation models, and run online experiments.",
+    "requirements": ["Python", "Machine Learning", "Recommender Systems", "PyTorch", "Spark", "SQL", "A/B Testing", "Kafka", "Docker", "Git"]
+  },
+  {
+    "title": "Software Engineer – Full Stack (React + Python)",
+    "company": "HashedIn by Deloitte",
+    "location": "Bengaluru, India",
+    "role_category": "fullstack",
+    "full_description": "Build enterprise digital transformation products as a full-stack engineer. Responsibilities include React frontend development, Python backend APIs, database design, and cloud deployment on AWS.",
+    "requirements": ["React", "Python", "FastAPI", "PostgreSQL", "AWS", "Docker", "TypeScript", "REST APIs", "Git", "Agile"]
+  },
+  {
+    "title": "Machine Learning Engineer – NLU",
+    "company": "Observe.AI",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build NLU models for contact centre automation. You will develop intent detection, sentiment analysis, and topic modelling systems that process millions of customer conversations daily.",
+    "requirements": ["Python", "NLP", "PyTorch", "Transformers", "Hugging Face", "Intent Detection", "Sentiment Analysis", "Docker", "REST APIs", "Git"]
+  },
+  {
+    "title": "Data Scientist – Marketing Analytics",
+    "company": "Nykaa",
+    "location": "Mumbai, India",
+    "role_category": "data_science",
+    "full_description": "Drive data-driven marketing at Nykaa through attribution modelling, customer segmentation, and campaign optimisation. You will partner with the growth team to design experiments and measure ROI of marketing spends.",
+    "requirements": ["Python", "SQL", "Marketing Analytics", "Attribution Modeling", "Segmentation", "Statistics", "A/B Testing", "Pandas", "Data Visualization", "Git"]
+  },
+  {
+    "title": "AI Engineer – LLM Applications",
+    "company": "Yellow.ai",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build enterprise conversational AI products using LLMs. You will design RAG pipelines, build agent frameworks, fine-tune LLMs for domain-specific tasks, and deploy them at scale for enterprise customers.",
+    "requirements": ["Python", "LLMs", "RAG", "LangChain", "Vector Databases", "Prompt Engineering", "FastAPI", "Docker", "REST APIs", "Git"]
+  },
+  {
+    "title": "Backend Engineer – Python/FastAPI",
+    "company": "Hashstack Finance",
+    "location": "Remote (India)",
+    "role_category": "backend",
+    "full_description": "Build backend APIs for a DeFi lending protocol. You will design and implement FastAPI services, integrate with blockchain data, manage PostgreSQL schemas, and ensure system security and reliability.",
+    "requirements": ["Python", "FastAPI", "PostgreSQL", "Docker", "REST APIs", "Blockchain", "Git", "Linux", "Security", "System Design"]
+  },
+  {
+    "title": "ML Engineer – Crop Intelligence",
+    "company": "Cropin",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Apply machine learning to agriculture — crop yield prediction, disease detection, and weather modelling for Cropin's global agritech platform. You will work with satellite imagery, time-series sensor data, and farm management data.",
+    "requirements": ["Python", "Machine Learning", "Computer Vision", "Time Series", "Satellite Imagery", "PyTorch", "SQL", "Docker", "REST APIs", "Git"]
+  },
+  {
+    "title": "Software Engineer – Search & Relevance",
+    "company": "BookMyShow",
+    "location": "Mumbai, India",
+    "role_category": "backend",
+    "full_description": "Improve search and discovery for BookMyShow's ticketing platform. You will build Elasticsearch-based retrieval, ranking models, and query understanding systems to help users find events faster.",
+    "requirements": ["Python", "Elasticsearch", "Machine Learning", "SQL", "Docker", "REST APIs", "Information Retrieval", "Redis", "Git", "Linux"]
+  },
+  {
+    "title": "Senior Data Scientist – Operations",
+    "company": "Porter",
+    "location": "Bengaluru, India",
+    "role_category": "data_science",
+    "full_description": "Optimise Porter's logistics operations using ML. You will build route optimisation, ETA prediction, and demand forecasting models that reduce delivery times and costs across 20+ cities.",
+    "requirements": ["Python", "Machine Learning", "Operations Research", "Optimization", "SQL", "Time Series", "Statistics", "Scikit-learn", "Docker", "Git"]
+  },
+  {
+    "title": "ML Engineer – Retail AI",
+    "company": "Ace Turtle",
+    "location": "Bengaluru, India",
+    "role_category": "ml",
+    "full_description": "Build ML models for retail intelligence — visual search, size recommendation, and customer personalisation. You will develop computer vision and NLP models and integrate them into e-commerce platforms.",
+    "requirements": ["Python", "PyTorch", "Computer Vision", "NLP", "REST APIs", "Docker", "SQL", "Scikit-learn", "Embeddings", "Git"]
+  },
+  {
+    "title": "Research Scientist – Generative AI",
+    "company": "TCS Research",
+    "location": "Mumbai, India",
+    "role_category": "ml",
+    "full_description": "Conduct research on generative AI for enterprise applications — code generation, document summarisation, and process automation. You will publish research and work with product teams to productise results.",
+    "requirements": ["Python", "PyTorch", "LLMs", "Generative AI", "NLP", "Research", "Transformers", "CUDA", "Git", "Technical Writing"]
+  }
+]
